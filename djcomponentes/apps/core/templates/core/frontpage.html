@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Welcome | {% endblock %}
+
+{% block content %}
+    <!---BANNER-INICIO--------------------------------------------->
+    <article class="home-intro">
+      <div class="container">
+        <div class="jumbotron">
+          <div class="row">
+            <div class="col-sm-5">
+              <h1><b>Tu tienda de tecnología de confianza</b></h1>
+              <h4>¡Compra los últimos productos al mejor precio!</h4></div>
+            <div class="col-sm-5"></div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!---BANNER-FIN--------------------------------------------->
+
+    <!---PRODUCTOS-NUEVOS-INICIO--------------------------------------------->
+    <div class="columns is-multiline mb-6">
+
+        <div id="productos_nuevos" class="column is-12 has-text-centered mt-6 mb-3 container">
+            <h2 class="is-size-3"><b>Productos nuevos</b></h2>
+        </div>
+
+        {% for product in newest_products %}
+            {% include 'product/parts/list_item.html' %}
+        {% endfor %}
+    </div>
+    <!---PRODUCTOS-NUEVOS-FIN--------------------------------------------->
+
+    <!---RIBBON-INICIO---------------------------------------------->
+    <div id="ribbon" class="container-fluid jumbotron">
+      <div id="sorteo" class="container w-50 pl-5 rounded-lg">
+        <div class="row align-items-center">
+          <div class="col-sm p-3">
+            <img src="static\images\sorteo_mario.png" class="mx-auto d-block" alt="articulo_sorteo">
+          </div>
+
+          <div class="col-sm p-3 text-light text-center">
+            <p class="text-warning h2 text-shadow"><b>Sorteo actual: ¡Figura de Mario Bros!</b></p>
+            <h4 class="h4 text-shadow">Todos los usuarios registrados participan en el sorteo. Finaliza el día <b>15 de Febrero</b></h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!---RIBBON-FIN---------------------------------------------->
+
+{% endblock %}

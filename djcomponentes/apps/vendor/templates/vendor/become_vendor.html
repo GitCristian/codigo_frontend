@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Become vendor | {% endblock %}
+
+{% block content %}
+    <h1 class="title">Convertirse en vendedor</h1>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <div class="field">
+            <div class="control">
+                <button class="button is-dark is-uppercase">Crear usuario</button>
+            </div>
+        </div>
+    </form>
+
+    <hr>
+
+    <h2 class="subtitle">¿Ya tiene una cuenta de usuario?</h2>
+
+    <a href="{% url 'login' %}">Iniciar sesión</a>
+{% endblock %}
